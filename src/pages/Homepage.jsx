@@ -1,6 +1,6 @@
 import zeldaBg from '../assets/zelda-bg.jpg'
 import starsBackground from '../assets/stars-background.jpg'
-import { Button } from '../components/ui'
+import { CarouselButton } from '../components/ui'
 import { Carousel } from '../components'
 import {
   SiPlaystation,
@@ -27,7 +27,7 @@ export default function Homepage() {
         }}
         className=' h-[calc(100vh-69px)] flex flex-col justify-around'
         >
-        <div className='flex flex-col gap-4 justify-start py-6 px-8 rounded-lg items-center w-fit mx-auto' style={{backgroundColor: 'rgb(46, 16, 101, 0.6)'}}>
+        <div className='flex flex-col gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48' style={{backgroundColor: 'rgb(46, 16, 101, 0.4)'}}>
           <h1 className='text-5xl text-violet-400 font-bold'>Game World</h1>
 
           <div className='flex text-3xl gap-4 text-violet-500'>
@@ -44,7 +44,18 @@ export default function Homepage() {
           </button>
         </div>
 
-        <div>
+        <div 
+          style={{backgroundColor: 'rgb(46, 16, 101, 0.4)'}}
+          className='flex flex-col gap-4 rounded-lg mx-4 md:mx-10 lg:mx-24 xl:mx-48'>
+          <h2 className='text-2xl text-violet-400 font-bold text-center pt-4'>Most Popular Games as of...</h2>
+
+          <div className='flex justify-between'>
+            <CarouselButton text={'Today'} />
+            <CarouselButton text={'This Week'} />
+            <CarouselButton text={'This Month'} />
+            <CarouselButton text={'This Year'} />
+          </div>
+          
           <Carousel/>
         </div>
 

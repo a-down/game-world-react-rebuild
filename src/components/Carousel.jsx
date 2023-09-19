@@ -21,7 +21,7 @@ export default function Carousel() {
 
   return (
     <motion.div
-    className='overflow-hidden cursor-grab mx-[50px]'
+    className='overflow-hidden cursor-grab '
     ref={carousel}
     whileTap={{cursor: 'grabbing'}}>
 
@@ -31,21 +31,21 @@ export default function Carousel() {
         className='flex'>
 
         <motion.div className='min-w-[20rem] p-4'>
+          <img src={roryPic} className='rounded-md pointer-events-none self-end'/>
+        </motion.div>
+        <motion.div className='min-w-[20rem] p-4'>
           <img src={roryPic} className='rounded-md pointer-events-none'/>
         </motion.div>
-        <motion.div className='min-h-[30rem] min-w-[20rem] p-4'>
+        <motion.div className='min-w-[20rem] p-4'>
           <img src={roryPic} className='rounded-md pointer-events-none'/>
         </motion.div>
-        <motion.div className='min-h-[30rem] min-w-[20rem] p-4'>
+        <motion.div className='min-w-[20rem] p-4'>
           <img src={roryPic} className='rounded-md pointer-events-none'/>
         </motion.div>
-        <motion.div className='min-h-[30rem] min-w-[20rem] p-4'>
+        <motion.div className='min-w-[20rem] p-4'>
           <img src={roryPic} className='rounded-md pointer-events-none'/>
         </motion.div>
-        <motion.div className='min-h-[30rem] min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        <motion.div className='min-h-[30rem] min-w-[20rem] p-4'>
+        <motion.div className='min-w-[20rem] p-4'>
           <img src={roryPic} className='rounded-md pointer-events-none'/>
         </motion.div>
         
