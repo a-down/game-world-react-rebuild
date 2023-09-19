@@ -22,9 +22,10 @@ export default function Carousel({ games }) {
 
   return (
     <motion.div
-    className='overflow-hidden cursor-grab '
+    className='overflow-hidden cursor-grab'
     ref={carousel}
-    whileTap={{cursor: 'grabbing'}}>
+    whileTap={{cursor: 'grabbing'}}
+    style={{backgroundColor: 'rgb(46, 16, 101, 0.4)'}}>
 
       <motion.div
         drag='x'

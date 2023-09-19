@@ -7,7 +7,7 @@ export default function Header() {
 
 
   return (
-    <div className="w-full h-[69px] flex justify-end bg-violet-950">
+    <div className="w-full h-[69px] flex justify-end ">
       <Menubar.Root>
         <Menubar.Menu>
           <Menubar.Trigger className=' m-4 p-2 rounded-full shadow-sm '>
@@ -15,6 +15,7 @@ export default function Header() {
           </Menubar.Trigger>
           <Menubar.Portal>
             <Menubar.Content className='mx-4 my-2 text-right bg-violet-950 text-neutral-50 p-2 rounded-md border-neutral-50 shadow-md flex flex-col gap-1'>
+              <HeaderLink text={'Home'} link={'/'}/>
               <HeaderLink text={'Search Database'} link={'/search'}/>
               <HeaderLink text={'Favorite Games'} link={'/favorites'}/>
             </Menubar.Content>

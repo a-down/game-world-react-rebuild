@@ -1,5 +1,4 @@
 import zeldaBg from '../assets/zelda-bg.jpg'
-import starsBackground from '../assets/stars-background.jpg'
 import { CarouselWrapper } from '../components/CarouselComponents'
 import {
   SiPlaystation,
@@ -17,15 +16,7 @@ export default function Homepage() {
 
   return (
     <>
-      <div 
-        style={{
-        backgroundImage: `url(${starsBackground})`, 
-        backgroundRepeat: 'repeat', 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        }}
-        className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'
-        >
+      <div className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'>
         <div className='flex flex-col gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48'>
           <h1 className='text-5xl text-violet-600 font-bold'>Game World</h1>
 
