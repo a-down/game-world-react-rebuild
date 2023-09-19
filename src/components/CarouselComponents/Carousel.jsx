@@ -33,7 +33,7 @@ export default function Carousel({ games }) {
         className='flex'>
 
         {games.map((game) => (
-          <GameCard game={game}/>
+          <GameCard game={game} featured={true}/>
         ))}
 
       </motion.div>
