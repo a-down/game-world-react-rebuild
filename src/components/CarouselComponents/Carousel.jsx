@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import roryPic from '../../assets/rory.jpeg'
+import { GameCard } from '../../components'
 
 
-export default function Carousel() {
+export default function Carousel({ games }) {
   const [width, setWidth] = useState(0)
   let carousel = useRef()
+  // console.log(games)
 
   // window.addEventListener("resize", displayWindowSize);
 
@@ -17,7 +18,7 @@ export default function Carousel() {
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
-  }, [])
+  }, [games])
 
   return (
     <motion.div
@@ -30,25 +31,9 @@ export default function Carousel() {
         dragConstraints={{right: 0, left: -width}}
         className='flex'>
 
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none self-end'/>
-        </motion.div>
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        <motion.div className='min-w-[20rem] p-4'>
-          <img src={roryPic} className='rounded-md pointer-events-none'/>
-        </motion.div>
-        
+        {games.map((game) => (
+          <GameCard game={game}/>
+        ))}
 
       </motion.div>
 

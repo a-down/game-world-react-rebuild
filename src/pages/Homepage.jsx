@@ -24,7 +24,7 @@ export default function Homepage() {
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         }}
-        className=' min-h-[calc(100vh-69px)] flex flex-col justify-around'
+        className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'
         >
         <div className='flex flex-col gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48' style={{backgroundColor: 'rgb(46, 16, 101, 0.2)'}}>
           <h1 className='text-5xl text-violet-400 font-bold'>Game World</h1>
