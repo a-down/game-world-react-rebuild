@@ -1,4 +1,5 @@
 import zeldaBg from '../assets/zelda-bg.jpg'
+import starsBackground from '../assets/stars-background.jpg'
 import { Button } from '../components/ui'
 import { Carousel } from '../components'
 import {
@@ -18,19 +19,18 @@ export default function Homepage() {
   return (
     <>
       <div 
-        // style={{
-        // backgroundImage: `url(${zeldaBg})`, 
-        // backgroundRepeat: 'no-repeat', 
-        // backgroundSize: 'cover', 
-        // backgroundPosition: 'center',
-        // filter: 'grayscale(80%)'
-        // }}
-        className='bg-neutral-50'
+        style={{
+        backgroundImage: `url(${starsBackground})`, 
+        backgroundRepeat: 'repeat', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        }}
+        className=' h-[calc(100vh-69px)] flex flex-col justify-around'
         >
-        <div className='flex flex-col gap-4 justify-start py-16 items-center'>
-          <h1 className='text-5xl text-violet-900 font-bold'>Game World</h1>
+        <div className='flex flex-col gap-4 justify-start py-6 px-8 rounded-lg items-center w-fit mx-auto' style={{backgroundColor: 'rgb(46, 16, 101, 0.6)'}}>
+          <h1 className='text-5xl text-violet-400 font-bold'>Game World</h1>
 
-          <div className='flex text-3xl gap-4 text-violet-400'>
+          <div className='flex text-3xl gap-4 text-violet-500'>
             <SiPlaystation />
             <SiXbox />
             <SiNintendoswitch />
@@ -38,13 +38,15 @@ export default function Homepage() {
           </div>
 
           <button
-            className='bg-violet-900 border-1 text-neutral-50 font-semibold m-2 py-2 px-4 rounded-md shadow-md hover:opacity-80 hover:shadow-lg' 
+            className='bg-violet-800 border-1 text-neutral-50 font-semibold m-2 py-2 px-4 rounded-md shadow-md hover:opacity-80 hover:shadow-lg' 
             onClick={searchButton}>
             Search Our World
           </button>
         </div>
 
-        <Carousel />
+        <div>
+          <Carousel/>
+        </div>
 
       </div>
     </>
