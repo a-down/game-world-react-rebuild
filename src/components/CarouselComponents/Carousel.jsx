@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-import roryPic from '../assets/rory.jpeg'
+import roryPic from '../../assets/rory.jpeg'
 
 
 export default function Carousel() {
