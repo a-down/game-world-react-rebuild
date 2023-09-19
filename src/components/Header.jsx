@@ -7,11 +7,11 @@ export default function Header() {
 
 
   return (
-    <div className="w-full flex justify-end bg-violet-800">
+    <div className="w-full h-[69px] flex justify-end bg-neutral-50">
       <Menubar.Root>
         <Menubar.Menu>
-          <Menubar.Trigger className=' m-4 p-2 bg-white rounded-full shadow-sm hover:bg-violet-400'>
-            <GiHamburgerMenu className='text-violet-800'/>
+          <Menubar.Trigger className=' m-4 p-2 bg-violet-200 rounded-full shadow-sm hover:bg-violet-400'>
+            <GiHamburgerMenu className='text-violet-900'/>
           </Menubar.Trigger>
           <Menubar.Portal>
             <Menubar.Content className='mx-4 my-2 text-right bg-white py-2 px-4 rounded-md border-neutral-50 shadow-md flex flex-col gap-1'>
