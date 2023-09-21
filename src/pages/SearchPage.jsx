@@ -21,7 +21,9 @@ export default function SearchPage() {
 
   function searchForGames(searchTerm, filterTerm) {
     // e.preventDefault()
-    localStorage.setItem('Search History', JSON.stringify([...searchHistory, {query: searchTerm, filter: filterTerm}]))
+    
+    // [...searchHistory, {query: searchTerm, filter: filterTerm}]
+    localStorage.setItem('Search History', JSON.stringify([{query: searchTerm, filter: filterTerm}, ...searchHistory]))
     setSearchHistory(JSON.parse(localStorage.getItem('Search History')))
 
     let filter

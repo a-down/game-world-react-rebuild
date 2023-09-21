@@ -13,6 +13,8 @@ export default function SearchHistoryLink({search, searchForGames, setInputData}
     <button 
       className='text-neutral-50 underline text-sm pr-4' 
       key={search.query}
-      onClick={searchFromHistory}>{search.query}</button>
+      onClick={searchFromHistory}>
+        {search.query}
+    </button>
   )
 }
