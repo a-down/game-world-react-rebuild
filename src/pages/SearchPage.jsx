@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GameCard, SearchHistoryLink, SearchHistoryWrapper } from '../components'
+import { GameCard, SearchHistoryLink, SearchHistoryWrapper, GameModal } from '../components'
 
 
 export default function SearchPage() {
