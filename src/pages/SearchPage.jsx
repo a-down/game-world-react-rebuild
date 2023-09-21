@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GameCard, SearchHistoryLink } from '../components'
+import { GameCard, SearchHistoryLink, SearchHistoryWrapper } from '../components'
 
 
 export default function SearchPage() {
@@ -10,7 +10,34 @@ export default function SearchPage() {
   const [ inputData, setInputData ] = useState({search: '', filter: 'Sort By Highest Rating'})
   const [ displayedGames, setDisplayedGames ] = useState([])
   const [ searchHistory, setSearchHistory ] = useState(previousSearches)
-  const [ key, setKey ] = useState(0)
+  const [ displayedSearchHistory, setDisplayedSearchHistory] = useState([])
+
+  // function updateDisplayedHistory() {
+  //   if (searchHistory.length >= 5) {
+  //     let arr = []
+  //     arr.push(
+  //       [0,1,2,3,4].map((x) => {
+  //         return searchHistory[x]
+  //     }))
+  //     setDisplayedSearchHistory(arr)
+  //   } else {
+  //     setDisplayedSearchHistory([...searchHistory])
+  //   } 
+  // }
+  
+  // useEffect(() => {
+  //   updateDisplayedHistory()
+  // }, [])
+
+
+  // useEffect(() => {
+  //   displayedSearchHistory.push(
+  //     [0,1,2,3,4].map((x) => {
+  //       return searchHistory[x]
+  //     })
+  //   )
+  // }, [searchHistory])
+  // console.log(displayedSearchHistory)
   
   const apiKey = import.meta.env.VITE_API_KEY
 
@@ -20,9 +47,6 @@ export default function SearchPage() {
   }
 
   function searchForGames(searchTerm, filterTerm) {
-    // e.preventDefault()
-    
-    // [...searchHistory, {query: searchTerm, filter: filterTerm}]
     localStorage.setItem('Search History', JSON.stringify([{query: searchTerm, filter: filterTerm}, ...searchHistory]))
     setSearchHistory(JSON.parse(localStorage.getItem('Search History')))
 
@@ -70,12 +94,13 @@ export default function SearchPage() {
           Search Our World
         </button>
 
-        {searchHistory && (
+        {searchHistory[0] && (
           <div className='w-96'>
             <h4 className='text-neutral-50 text-sm font-semibold text-left'>Recent Searches:</h4>
-            {searchHistory.map((search, index) => (
+            {/* {searchHistory.map((search, index) => (
               <SearchHistoryLink search={search} searchForGames={searchForGames} setInputData={setInputData} key={index}/>
-            ))}
+            ))} */}
+            <SearchHistoryWrapper searchHistory={searchHistory} searchForGames={searchForGames} setInputData={setInputData} key={1}/>
           </div>
         )}
       </div>

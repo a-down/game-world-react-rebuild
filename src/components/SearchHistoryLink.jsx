@@ -1,10 +1,9 @@
-import { useEffect } from "react"
 
 
 
 export default function SearchHistoryLink({search, searchForGames, setInputData}) {
 
-  function searchFromHistory() {
+function searchFromHistory() {
     setInputData({search: search.query, filter: search.filter})
     searchForGames(search.query, search.filter)
   }
