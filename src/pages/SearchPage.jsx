@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GameCard } from '../components'
+import { GameCard, SearchHistoryLink } from '../components'
 
 
 export default function SearchPage() {
@@ -10,23 +10,21 @@ export default function SearchPage() {
   const [ inputData, setInputData ] = useState({search: '', filter: 'Sort By Highest Rating'})
   const [ displayedGames, setDisplayedGames ] = useState([])
   const [ searchHistory, setSearchHistory ] = useState(previousSearches)
-  console.log(searchHistory)
+  const [ key, setKey ] = useState(0)
   
   const apiKey = import.meta.env.VITE_API_KEY
 
   function handleInputChange(){
     const { name, value } = event.target;
     setInputData({ ...inputData, [name]: value });
-    // console.log(inputData)
   }
 
   function searchForGames(e) {
-    e.preventDefault()
-    let filter
-    
+    // e.preventDefault()
     localStorage.setItem('Search History', JSON.stringify([...searchHistory, {query: inputData.search, filter: inputData.filter}]))
     setSearchHistory(JSON.parse(localStorage.getItem('Search History')))
 
+    let filter
     switch(inputData.filter) {
       case 'Sort By Highest Rating':
         filter = '-rating'
@@ -43,20 +41,10 @@ export default function SearchPage() {
         return res.json()
       })
       .then((data) => {
-        // console.log(data.results)
         setDisplayedGames(data.results)
-        // console.log(searchHistory)
-        // searchHistory 
-        //   ? setSearchHistory([...searchHistory, {query: inputData.search, filter: inputData.filter}])
-        //   : setSearchHistory([{query: inputData.search, filter: inputData.filter}])
-        // console.log(searchHistory)
-        // localStorage.setItem('Search History', JSON.stringify(searchHistory))
       })
     }
-  
-    // useEffect(() => {
-    //   localStorage.setItem('Search History', JSON.stringify(searchHistory))
-    // }, [setSearchHistory])
+    
 
   return (
     <div className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'>
@@ -66,8 +54,8 @@ export default function SearchPage() {
         <h1 className='text-5xl text-violet-400 font-bold'>Search Game World</h1>
 
         <div className='flex flex-col gap-4 text-gray-900'>
-          <input className="py-1 px-2 rounded-md w-80 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
-          <select className="py-1.5 px-2 rounded-md w-80 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
+          <input className="py-1 px-2 rounded-md w-96 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
+          <select className="py-1.5 px-2 rounded-md w-96 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
             <option>Sort By Highest Rating</option>
             <option>Sort By Lowest Rating</option>
           </select>
@@ -79,6 +67,15 @@ export default function SearchPage() {
           type='submit' >
           Search Our World
         </button>
+
+        {searchHistory && (
+          <div className='w-96'>
+            <h4 className='text-neutral-50 text-sm font-semibold text-left'>Recent Searches:</h4>
+            {searchHistory.map((search, index) => (
+              <SearchHistoryLink search={search} searchForGames={searchForGames} setInputData={setInputData} key={index}/>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="flex flex-wrap justify-around mx-4 md:mx-10 lg:mx-24 xl:mx-48">
