@@ -2,6 +2,7 @@
 
 
 export default function SearchHistoryLink({search, searchForGames, setInputData}) {
+  console.log('here')
 
 function searchFromHistory() {
     setInputData({search: search.query, filter: search.filter})
