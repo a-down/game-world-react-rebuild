@@ -1,5 +1,4 @@
-import Carousel from './Carousel'
-import CarouselButton from './CarouselButton'
+import { Carousel, CarouselButton } from '../CarouselComponents'
 import { useState, useEffect } from 'react'
 
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { GameCard, SearchHistoryLink, SearchHistoryWrapper, GameModal } from '../components'
+import { GameCard, SearchHistoryWrapper } from '../components'
 
 
 export default function SearchPage() {
@@ -11,33 +11,6 @@ export default function SearchPage() {
   const [ displayedGames, setDisplayedGames ] = useState([])
   const [ searchHistory, setSearchHistory ] = useState(previousSearches)
   const [ displayedSearchHistory, setDisplayedSearchHistory] = useState([])
-
-  // function updateDisplayedHistory() {
-  //   if (searchHistory.length >= 5) {
-  //     let arr = []
-  //     arr.push(
-  //       [0,1,2,3,4].map((x) => {
-  //         return searchHistory[x]
-  //     }))
-  //     setDisplayedSearchHistory(arr)
-  //   } else {
-  //     setDisplayedSearchHistory([...searchHistory])
-  //   } 
-  // }
-  
-  // useEffect(() => {
-  //   updateDisplayedHistory()
-  // }, [])
-
-
-  // useEffect(() => {
-  //   displayedSearchHistory.push(
-  //     [0,1,2,3,4].map((x) => {
-  //       return searchHistory[x]
-  //     })
-  //   )
-  // }, [searchHistory])
-  // console.log(displayedSearchHistory)
   
   const apiKey = import.meta.env.VITE_API_KEY
 

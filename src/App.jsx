@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FavoritesPage, Homepage, SearchPage } from './pages'
-import { Header } from './components'
+import { Header } from './components/HeaderComponents'
 import { Theme, ThemePanel } from '@radix-ui/themes';
 import starsBackground from './assets/stars-background.jpg'
 

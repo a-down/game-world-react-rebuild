@@ -1,4 +1,4 @@
-import { SearchHistoryLink } from './index'
+import { SearchHistoryLink } from '../index'
 
 
 export default function SearchHistoryWrapper({searchHistory, searchForGames, setInputData}) {

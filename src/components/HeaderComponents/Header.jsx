@@ -1,6 +1,6 @@
 import * as Menubar from '@radix-ui/react-menubar';
 import { GiHamburgerMenu } from 'react-icons/gi'
-import HeaderLink from './HeaderComponents/HeaderLink';
+import { HeaderLink } from '../HeaderComponents';
 
 
 export default function Header() {

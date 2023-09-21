@@ -1,4 +1,3 @@
-import zeldaBg from '../assets/zelda-bg.jpg'
 import { CarouselWrapper } from '../components/CarouselComponents'
 import {
   SiPlaystation,
