@@ -5,7 +5,7 @@ export default function SearchHistoryWrapper({searchHistory, searchForGames, set
 
   let componentsArr = []
   for (let i = 0; i < 5; i++) {
-    componentsArr.push(<SearchHistoryLink search={searchHistory[i]} searchForGames={searchForGames} setInputData={setInputData} key={i}/>)
+    componentsArr.push(<SearchHistoryLink search={searchHistory[0]} searchForGames={searchForGames} setInputData={setInputData} key={i}/>)
   }
 
   return (
