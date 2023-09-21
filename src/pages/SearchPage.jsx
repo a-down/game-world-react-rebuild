@@ -19,13 +19,13 @@ export default function SearchPage() {
     setInputData({ ...inputData, [name]: value });
   }
 
-  function searchForGames(e) {
+  function searchForGames(searchTerm, filterTerm) {
     // e.preventDefault()
-    localStorage.setItem('Search History', JSON.stringify([...searchHistory, {query: inputData.search, filter: inputData.filter}]))
+    localStorage.setItem('Search History', JSON.stringify([...searchHistory, {query: searchTerm, filter: filterTerm}]))
     setSearchHistory(JSON.parse(localStorage.getItem('Search History')))
 
     let filter
-    switch(inputData.filter) {
+    switch(filterTerm) {
       case 'Sort By Highest Rating':
         filter = '-rating'
         break;
@@ -34,7 +34,7 @@ export default function SearchPage() {
         break;
     }
 
-    let url = `https://api.rawg.io/api/games?search_precise=true&search=${inputData.search}&ordering=${filter}&key=${apiKey}`
+    let url = `https://api.rawg.io/api/games?search_precise=true&search=${searchTerm}&ordering=${filter}&key=${apiKey}`
     
     fetch(url)
       .then((res) => {
@@ -63,7 +63,7 @@ export default function SearchPage() {
 
         <button
           className='bg-violet-600 border-1 text-neutral-50 font-semibold m-2 py-2 px-4 rounded-md shadow-md hover:opacity-80 hover:shadow-lg'
-          onClick={searchForGames}
+          onClick={() => searchForGames(inputData.search, inputData.filter)}
           type='submit' >
           Search Our World
         </button>

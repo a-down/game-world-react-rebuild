@@ -6,7 +6,7 @@ export default function SearchHistoryLink({search, searchForGames, setInputData}
 
   function searchFromHistory() {
     setInputData({search: search.query, filter: search.filter})
-    searchForGames()
+    searchForGames(search.query, search.filter)
   }
 
   return (
