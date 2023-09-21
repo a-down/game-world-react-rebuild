@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 
 export default function GameCard({game, featured}) {
-  console.log(game)
+  // console.log(game)
 
   let cardSizing
   featured 
@@ -10,7 +10,7 @@ export default function GameCard({game, featured}) {
     : cardSizing = ' w-full md:w-[20rem] md:h-[11.33rem]'
 
   return (
-    <motion.div className='p-4 relative' key={game.slug}>
+    <motion.div className='p-4 relative'>
       <img src={game.background_image} className={`rounded-md pointer-events-none self-end ${cardSizing}`}/>
       <h3 className='text-neutral-50 font-semibold absolute bottom-4 bg-black py-0.5 px-1 rounded-bl-md rounded-tr-md '>
         {game.name}

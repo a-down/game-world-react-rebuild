@@ -3,22 +3,29 @@ import { GameCard } from '../components'
 
 
 export default function SearchPage() {
+  const storage = JSON.parse(localStorage.getItem('Search History'))
+  let previousSearches
+  storage ? previousSearches = storage : previousSearches = []
+
   const [ inputData, setInputData ] = useState({search: '', filter: 'Sort By Highest Rating'})
   const [ displayedGames, setDisplayedGames ] = useState([])
-  
+  const [ searchHistory, setSearchHistory ] = useState(previousSearches)
+  console.log(searchHistory)
   
   const apiKey = import.meta.env.VITE_API_KEY
 
   function handleInputChange(){
     const { name, value } = event.target;
     setInputData({ ...inputData, [name]: value });
-    console.log(inputData)
+    // console.log(inputData)
   }
 
   function searchForGames(e) {
     e.preventDefault()
     let filter
-    console.log(inputData.filter)
+    
+    localStorage.setItem('Search History', JSON.stringify([...searchHistory, {query: inputData.search, filter: inputData.filter}]))
+    setSearchHistory(JSON.parse(localStorage.getItem('Search History')))
 
     switch(inputData.filter) {
       case 'Sort By Highest Rating':
@@ -26,12 +33,6 @@ export default function SearchPage() {
         break;
       case 'Sort By Lowest Rating':
         filter = 'rating'
-        break;
-      case 'Sort By Release Date (newest)':
-        filter = 'created'
-        break;
-      case 'Sort By Release Date (oldest)':
-        filter = '-created'
         break;
     }
 
@@ -42,10 +43,20 @@ export default function SearchPage() {
         return res.json()
       })
       .then((data) => {
-        console.log(data.results)
+        // console.log(data.results)
         setDisplayedGames(data.results)
+        // console.log(searchHistory)
+        // searchHistory 
+        //   ? setSearchHistory([...searchHistory, {query: inputData.search, filter: inputData.filter}])
+        //   : setSearchHistory([{query: inputData.search, filter: inputData.filter}])
+        // console.log(searchHistory)
+        // localStorage.setItem('Search History', JSON.stringify(searchHistory))
       })
     }
+  
+    // useEffect(() => {
+    //   localStorage.setItem('Search History', JSON.stringify(searchHistory))
+    // }, [setSearchHistory])
 
   return (
     <div className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'>
@@ -59,8 +70,6 @@ export default function SearchPage() {
           <select className="py-1.5 px-2 rounded-md w-80 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
             <option>Sort By Highest Rating</option>
             <option>Sort By Lowest Rating</option>
-            <option>Sort By Release Date (newest)</option>
-            <option>Sort By Release Date (oldest)</option>
           </select>
         </div>
 
@@ -75,7 +84,7 @@ export default function SearchPage() {
       <div className="flex flex-wrap justify-around mx-4 md:mx-10 lg:mx-24 xl:mx-48">
         {displayedGames && (
           displayedGames.map((game) => (
-            <GameCard game={game} featured={false}/>
+            <GameCard game={game} featured={false} key={game.slug}/>
           ))
         )}
       </div>
