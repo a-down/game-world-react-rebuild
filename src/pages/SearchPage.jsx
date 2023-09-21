@@ -97,9 +97,6 @@ export default function SearchPage() {
         {searchHistory[0] && (
           <div className='w-96'>
             <h4 className='text-neutral-50 text-sm font-semibold text-left'>Recent Searches:</h4>
-            {/* {searchHistory.map((search, index) => (
-              <SearchHistoryLink search={search} searchForGames={searchForGames} setInputData={setInputData} key={index}/>
-            ))} */}
             <SearchHistoryWrapper searchHistory={searchHistory} searchForGames={searchForGames} setInputData={setInputData} key={1}/>
           </div>
         )}
