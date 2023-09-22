@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hiding scrollbar for Chrome, Safari and Opera */
+.dialog-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hiding scrollbar for IE, Edge and Firefox */
+.dialog-content {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+@media screen and (max-width: 640px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}

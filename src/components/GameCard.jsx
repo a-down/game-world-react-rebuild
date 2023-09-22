@@ -9,8 +9,8 @@ export default function GameCard({game, featured}) {
   const [ gameDetails, setGameDetails ] = useState({})
   const [ gameScreenshots, setGameScreenshots ] = useState([])
   // console.log(game)
-  // console.log(gameDetails)
-  console.log(gameScreenshots)
+  console.log(gameDetails)
+  // console.log(gameScreenshots)
 
   useEffect(() => {
     let arr = []
@@ -80,8 +80,9 @@ export default function GameCard({game, featured}) {
           <Dialog.Portal>
             <Dialog.Overlay className="bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0" />
 
-            <Dialog.Content className=" fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[800px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-neutral-200 p-[25px] shadow-xl focus:outline-none overflow-scroll">
-              <Dialog.Title className="text-mauve12 m-0 mb-2 text-lg font-bold">
+            <Dialog.Content className="dialog-content fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[800px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-neutral-200 p-[25px] shadow-xl focus:outline-none overflow-scroll">
+
+              <Dialog.Title className="m-0 mb-2 text-lg font-bold" style={{color: gameDetails.dominant_color}}>
                 {game.name}
               </Dialog.Title>
 
@@ -105,7 +106,9 @@ export default function GameCard({game, featured}) {
                   <Cross2Icon />
                 </button>
               </Dialog.Close>
+
             </Dialog.Content>
+
           </Dialog.Portal>
         </Dialog.Root>}
     
