@@ -17,9 +17,9 @@ export default function App() {
             }}>
             <Header/>
             <Routes>
-              <Route path="/" element={<Homepage />} />
               <Route path="/search" element={<SearchPage />} />
-              <Route path="/favorites" element={<FavoritesPage />} />
+              <Route path="/*" element={<Homepage />} />
+              {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
             </Routes>
           </div>
           {/* <ThemePanel/> */}

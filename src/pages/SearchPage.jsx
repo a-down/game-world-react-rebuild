@@ -50,7 +50,7 @@ export default function SearchPage() {
       <div 
         className='flex flex-col gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48'
         style={{backgroundColor: 'rgb(46, 16, 101, 0.6)'}}>
-        <h1 className='text-5xl text-violet-400 font-bold'>Search Game World</h1>
+        <h1 className='text-5xl text-violet-400 font-bold'>Search <span className='text-violet-100'>Game World</span></h1>
 
         <div className='flex flex-col gap-4 text-gray-900'>
           <input className="py-1 px-2 rounded-md w-96 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
