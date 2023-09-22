@@ -53,8 +53,8 @@ export default function SearchPage() {
         <h1 className='text-5xl text-violet-400 font-bold'>Search <span className='text-violet-100'>Game World</span></h1>
 
         <div className='flex flex-col gap-4 text-gray-900'>
-          <input className="py-1 px-2 rounded-md w-96 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
-          <select className="py-1.5 px-2 rounded-md w-96 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
+          <input className="py-1 px-2 rounded-md w-full max-w-96 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
+          <select className="py-1.5 px-2 rounded-md w-full max-w-96 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
             <option>Sort By Highest Rating</option>
             <option>Sort By Lowest Rating</option>
           </select>
