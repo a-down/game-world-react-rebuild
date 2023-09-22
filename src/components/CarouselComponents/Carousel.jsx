@@ -31,8 +31,8 @@ export default function Carousel({ games }) {
         drag='x'
         dragConstraints={{right: 0, left: -width}}
         className='flex'>
-
-        {games.map((game) => (
+        
+        {games && games.map((game) => (
           <GameCard game={game} featured={true} key={game.slug}/>
         ))}
 

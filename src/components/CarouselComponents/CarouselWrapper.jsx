@@ -81,7 +81,7 @@ export default function CarouselWrapper() {
       className='flex flex-col gap-4 rounded-lg px-8 md:px-14 lg:px-28 xl:px-52'>
       <h2 className='text-2xl text-violet-400 font-bold text-center pt-4'>Most popular games released in the past {displayParam}:</h2>
 
-      <Carousel games={displayedGames}/>
+      <Carousel games={displayedGames} featured={false}/>
 
       <div className='flex justify-between'>
         <CarouselButton text={'Year'} action={() => displayGames('year')}/>
