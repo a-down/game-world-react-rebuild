@@ -8,9 +8,6 @@ import { Carousel } from './CarouselComponents'
 export default function GameCard({game, featured}) {
   const [ gameDetails, setGameDetails ] = useState({})
   const [ gameScreenshots, setGameScreenshots ] = useState([])
-  // console.log(game)
-  console.log(gameDetails)
-  // console.log(gameScreenshots)
 
   useEffect(() => {
     let arr = []

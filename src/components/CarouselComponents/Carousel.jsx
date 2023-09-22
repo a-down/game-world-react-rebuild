@@ -6,7 +6,6 @@ import { GameCard } from '../../components'
 export default function Carousel({ games }) {
   const [width, setWidth] = useState(0)
   let carousel = useRef()
-  // console.log(games)
 
   // window.addEventListener("resize", displayWindowSize);
 
