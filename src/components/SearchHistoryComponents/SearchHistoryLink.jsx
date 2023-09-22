@@ -10,7 +10,7 @@ function searchFromHistory() {
 
   return (
     <button 
-      className='text-neutral-50 underline text-sm pr-4' 
+      className='text-neutral-50 underline text-sm text-left pr-4 ml-0' 
       key={search.query}
       onClick={searchFromHistory}>
         {search.query}

@@ -48,11 +48,11 @@ export default function SearchPage() {
   return (
     <div className=' min-h-[calc(100vh-69px)] flex flex-col py-10 gap-10'>
       <div 
-        className='flex flex-col gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48'
+        className='flex flex-col text-center gap-4 justify-start py-6 rounded-lg items-center mx-4 md:mx-10 lg:mx-24 xl:mx-48'
         style={{backgroundColor: 'rgb(46, 16, 101, 0.6)'}}>
         <h1 className='text-5xl text-violet-400 font-bold'>Search <span className='text-violet-100'>Game World</span></h1>
 
-        <div className='flex flex-col gap-4 text-gray-900 w-full'>
+        <div className='flex flex-col gap-4 text-gray-900 w-[90%]'>
           <input className="py-1 px-2 rounded-md w-full mx-auto max-w-[400px] bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
           <select className="py-1.5 px-2 rounded-md w-full mx-auto max-w-[400px] bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
             <option>Sort By Highest Rating</option>
@@ -68,7 +68,7 @@ export default function SearchPage() {
         </button>
 
         {searchHistory[0] && (
-          <div className='w-96'>
+          <div className='w-[90%] max-w-[400px]'>
             <h4 className='text-neutral-50 text-sm font-semibold text-left'>Recent Searches:</h4>
             <SearchHistoryWrapper searchHistory={searchHistory} searchForGames={searchForGames} setInputData={setInputData} key={1}/>
           </div>

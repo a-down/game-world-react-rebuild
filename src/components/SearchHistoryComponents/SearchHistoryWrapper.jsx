@@ -25,7 +25,7 @@ export default function SearchHistoryWrapper({searchHistory, searchForGames, set
   
 
   return (
-    <div>
+    <div className='flex flex-wrap justify-start'>
       {componentsArr}
     </div>
   )
