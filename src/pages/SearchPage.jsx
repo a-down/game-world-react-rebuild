@@ -52,9 +52,9 @@ export default function SearchPage() {
         style={{backgroundColor: 'rgb(46, 16, 101, 0.6)'}}>
         <h1 className='text-5xl text-violet-400 font-bold'>Search <span className='text-violet-100'>Game World</span></h1>
 
-        <div className='flex flex-col gap-4 text-gray-900'>
-          <input className="py-1 px-2 rounded-md w-full max-w-96 bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
-          <select className="py-1.5 px-2 rounded-md w-full max-w-96 bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
+        <div className='flex flex-col gap-4 text-gray-900 w-full'>
+          <input className="py-1 px-2 rounded-md w-full mx-auto max-w-[400px] bg-neutral-50" placeholder='game title' name='search' value={inputData.search} onChange={handleInputChange}/>
+          <select className="py-1.5 px-2 rounded-md w-full mx-auto max-w-[400px] bg-neutral-50 text-gray-500" name='filter' value={inputData.filter} onChange={handleInputChange}>
             <option>Sort By Highest Rating</option>
             <option>Sort By Lowest Rating</option>
           </select>
